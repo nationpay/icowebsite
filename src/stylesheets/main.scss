@@ -1,0 +1,22 @@
+html {
+	height: 100% !important;
+}
+
+body {
+	height: 100%;
+	font-family: "Open Sans",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	background-color: #ffffff;
+	color: #696f6f;
+	overflow-x: hidden;
+}
+
+#root {
+    height: 100%;
+    position: relative;
+
+    @import 'utils/all';
+    @import 'components/all';
+	@import 'scenes/all'
+}

@@ -1,0 +1,161 @@
+
+.header-section {
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    transition: all ease 1s;
+
+    .navbar {
+        background-color: transparent;
+        border-color: transparent;
+
+        .navbar-header {
+            .navbar-brand {
+                line-height: 44px;
+                max-height: 50px;
+                font-size: 35px;
+                color: #fff;
+                cursor: pointer;
+                white-space: nowrap;
+
+                .logo-img {
+                     height: 30px;
+                     margin-top: -8px;
+                     margin-right: 10px;
+                     display: inline-block!important;
+                }
+
+                span {
+                    color: $primary-color;
+                }
+
+                &:hover, &:focus {
+                   color: #ffbe39;
+                   text-decoration: none;
+                }
+            }
+
+            .navbar-toggle {
+                border-color: transparent;
+               margin-top: 22px;
+
+               margin-bottom: 13px;
+            }
+        }
+
+        navbar-nav {
+
+        }
+    }
+
+
+
+
+}
+
+.floating {
+	margin-top: 0;
+    background: linear-gradient(90deg, $secondary_color, #212121);
+    box-shadow: 0 28px 56px 0 rgba(55, 55, 55, 0.22);
+}
+
+.floatingRoute {
+	margin-top: 0;
+    background: linear-gradient(90deg, $secondary_color, #212121);
+    box-shadow: 0 28px 56px 0 rgba(55, 55, 55, 0.22);
+}
+
+
+.navbar-nav > li > a {
+    margin-bottom: 0!important;
+    margin-top: 0!important;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* line-height: 25px; */
+    font-size: 16px;
+    height: 80px;
+    text-transform: uppercase;
+    line-height: 80px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.navbar-nav > li > Link {
+    margin-bottom: 0!important;
+    margin-top: 0!important;
+    padding-top: 0;
+    padding-bottom: 0;
+    /* line-height: 25px; */
+    font-size: 16px;
+    height: 80px;
+    text-transform: uppercase;
+    line-height: 80px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+}
+
+
+
+/**
+ * ========================================
+ * HEADER SECTION
+ * ========================================
+ */
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: #fff;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        width: calc(100% - 30px);
+        height: 4px;
+        background-color: #ffbe39;
+        pointer-events: none;
+    }
+
+}
+
+.navbar-default .navbar-nav > li.isActive {
+    background: linear-gradient(180deg,#009688,rgba(128,228,233,0));
+
+    a {
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            width: calc(100% - 30px);
+            height: 4px;
+            background-color: #ffbe39;
+            pointer-events: none;
+        }
+    }
+}
+
+.navbar-default .navbar-nav > li:hover  {
+    background: linear-gradient(180deg,#009688,rgba(128,228,233,0));
+}
+
+@media ( max-width: $screen-xs-max ) {
+        .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+            border-color: transparent!important;
+        }
+
+
+	.navbar-nav  {
+		 background: linear-gradient(90deg, $secondary_color, #212121);
+
+	}
+}

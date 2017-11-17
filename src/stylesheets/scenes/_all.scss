@@ -1,0 +1,37 @@
+.section {
+    padding: 80px 0;
+
+    .section-heading {
+        font-size: 50px;
+        font-weight: 700;
+        color: $primary-color;
+        line-height: 1em;
+        position: relative;
+        padding-bottom: 20px;
+        margin: 0 0 30px;
+        font-weight: 300;
+
+        // &:after{
+        //     border-top: 3px solid $primary-color;
+        //     display: block;
+        //     margin-top: 10px;
+        //     width: 30px;
+        //     content: "";
+        // }
+    }
+
+    .description {
+        color: #696f6f;
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .more {
+        color: $primary-color;
+        text-decoration: none;
+    }
+}
+
+@import 'login';
+@import 'dashboard';
+@import 'confirmation';
