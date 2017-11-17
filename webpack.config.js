@@ -1,9 +1,10 @@
 var path = require("path");
 var webpack = require("webpack");
 
-module.exports = {
+const config  = {
  entry: [
   //'webpack-dev-server/client?http://localhost:8080', // WebpackDevServer host and port
+   'react-hot-loader/patch',
    './src/index' // Your appʼs entry point
  ],
  output: {
@@ -17,6 +18,11 @@ module.exports = {
  plugins: [
      new webpack.HotModuleReplacementPlugin(),
      new webpack.NoEmitOnErrorsPlugin(),
+     new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  })
  ],
 
  module: {
@@ -24,7 +30,8 @@ module.exports = {
      {
        test: /\.jsx?$/,
        exclude: /node_modules/,
-       loaders: ['react-hot-loader','babel-loader'],
+       loaders: ['react-hot-loader/webpack','babel-loader'],
+       include: path.join(__dirname, 'src')
      },
      {
         test: /\.scss$/,
@@ -65,3 +72,13 @@ module.exports = {
     ]
  }
 };
+
+if (process.env.NODE_ENV === 'production') {
+    config.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true
+         })
+     )
+}
+
+module.exports = config;

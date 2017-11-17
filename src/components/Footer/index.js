@@ -25,29 +25,34 @@ class Footer extends Component {
                         </div> */}
 
                     </div>
-					<ul className="social-media-links wow fadeIn animated" data-wow-duration="1s">
-												<li>
-							<a href="https://www.facebook.com/nationpay" target="new">
-								<i className="fa fa-facebook"></i>
-							</a>
-						</li>
-												<li>
-							<a href="#" target="new">
-								<i className="fa fa-twitter"></i>
-							</a>
-						</li>
-												
-												<li>
-							<a href="https://t.me/nationpay" target="new">
-								<i className="fa fa-telegram"></i>
-							</a>
-						</li>
-						<li>
-							<a href="nationpay.slack.com" target="new">
-								<i className="fa fa-slack"></i>
-							</a>
-						</li>
-					</ul>
+                    <ul className="social-media-links wow fadeIn animated" data-wow-duration="1s">
+                        <li>
+                            <a href="https://www.facebook.com/NationPay/" target="new">
+                                <i className="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        {/*<li>
+                            <a href="https://twitter.com/" target="new">
+                                <i className="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="new">
+                                <i className="fa fa-linkedin"></i>
+                            </a>
+                        </li> */}
+                        <li>
+
+                            <a href="https://telegram.me/nationpay" target="new">
+                                <i className="fa fa-telegram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://nationpay.slack.com" target="new">
+                                <i className="fa fa-slack"></i>
+                            </a>
+                        </li>
+                    </ul>
 
                     <div className="footer-border row text-center">
 

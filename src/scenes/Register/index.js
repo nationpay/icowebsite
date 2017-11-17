@@ -22,10 +22,10 @@ import Alert from 'react-alert'
 
 const styles = {
   underlineStyle: {
-    borderColor: '#009688',
+    borderColor: '#00BCD4',
   },
   floatingLabelFocusStyle: {
-    color: '#009688',
+    color: '#00BCD4',
   },
   checkbox: {
       marginBottom: 16,

@@ -40,10 +40,10 @@ const mapDispatchToProps = ( dispatch, ownProps ) => {
 
 const styles = {
   underlineStyle: {
-    borderColor: '#009688',
+    borderColor: '#00BCD4',
   },
   floatingLabelFocusStyle: {
-    color: '#009688',
+    color: '#00BCD4',
   },
 };
 

@@ -52,13 +52,13 @@
 			margin-top: 30px;
 			font-weight: 600;
 			color: #fff;
-			background: linear-gradient(180deg, $primary-color, #00cfbc);
+			background: linear-gradient(180deg, $third-color, #00cfbc);
 			width: 100%;
 			font-size: 20px;
 			height: 50px;
 
 			&:hover {
-				background: $primary-color;
+				background: $third-color;
 			}
 		}
 

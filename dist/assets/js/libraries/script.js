@@ -75,6 +75,10 @@
 			$( this ).show().addClass( 'bounceIn' ).next().show();
 		});
 
+		$("nav").find("li").on("click", "a", function () {
+			  $('.navbar-toggle').trigger('click');
+		  });
+
 		/* =======================================
 		 * Detect Mobile Device
 		 * =======================================
@@ -110,7 +114,7 @@
 		 * =======================================
 		 */
 		// $( window ).on( 'scroll', function() {
-		//
+		// 
 		// 	// Floating Header
 		// 	if ( $( window ).scrollTop() > 60 ) {
 		// 		$( '.header-floating' ).addClass( 'floating' );
