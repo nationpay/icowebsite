@@ -32,6 +32,7 @@
     "bower": "^1.8.2",
     "compass-mixins": "^0.12.10",
     "fetch-everywhere": "^1.0.5",
+    "form-data": "^2.3.1",
     "install": "^0.10.1",
     "material-ui": "^0.19.4",
     "react": "^15.6.1",
