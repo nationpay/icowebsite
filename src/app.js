@@ -102,7 +102,7 @@ class App extends PureComponent {
         {
           type: 'url',
           item: {
-            pointer: 'https://realsafe.co',
+            pointer: 'https://nationpay.io',
             title: 'HOME',
             sameTab: true,
             icon: null,
@@ -124,7 +124,7 @@ class App extends PureComponent {
         {
           type: 'url',
           item: {
-            pointer: 'https://realsafe.co',
+            pointer: 'https://nationpay.io',
             title: 'TOKEN FAQ',
             sameTab: false,
             icon: null,
@@ -135,7 +135,7 @@ class App extends PureComponent {
         {
           type: 'url',
           item: {
-            pointer: 'https://realsafe.co/assets/doc/RealSafe_Whitepaper_v3.pdf',
+            pointer: 'https://nationpay.io/assets/doc/NationPay_the_Parallization_of_National_Currencies.pdf',
             title: 'WHITEPAPER',
             sameTab: false,
             icon: null,
