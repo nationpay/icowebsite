@@ -30,12 +30,12 @@ class Dashboard extends PureComponent {
                     <Row>
                         <Col md={ 5 } mdOffset={ 1 }>
                             <h2 className="section-heading">
-                                Hi Alex Oviedo{ this.props.profile.firstName }
+                                Hi { this.props.profile.firstName }
                             </h2>
                             <p className="buy-tokens">BUY TOKENS</p>
                             <div className="box-tokens">
-                                <p>Address will be available at the start pf the ICO, on Novenmber 2nd at 2PM UTC.</p>
-                                <p>ICO STARTS IN</p>
+                                <p>Address will be available at the start of the pre-ICO, on March 1st at 10AM UTC.</p>
+                                <p>PRE-ICO STARTS IN</p>
                                 <div id ="getting-started" className="getting-started"> </div>
                             </div>
                         </Col>

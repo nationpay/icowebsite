@@ -2,7 +2,7 @@
 
 let elm = $("#getting-started"),
     options = {
-        until: new Date(moment("2017-12-22T10:00:00Z")),
+        until: new Date(moment("2018-03-01T10:00:00Z")),
         format: 'dhMS',
         compact: false,
         layout:  '<div id="getting-started" class="anim-go-left dsCountDown ds-custome">'+
