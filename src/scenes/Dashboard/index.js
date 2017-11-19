@@ -29,7 +29,7 @@ class Dashboard extends PureComponent {
                     <div className="row">
                         <div className="col-md-12">
                             <h2 className="section-heading wow fadeIn" data-wow-duration="1s">
-                                Welcome { this.props.profile.firstName } to Real Safe!
+                                Welcome { this.props.profile.firstName } to Nation Pay!
                             </h2>
                         </div>
                     </div>

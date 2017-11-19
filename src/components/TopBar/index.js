@@ -138,7 +138,6 @@ class TopBar extends PureComponent {
           let {
             pointer,
             sameTab,
-            icon,
             className
           } = item
 
@@ -152,13 +151,14 @@ class TopBar extends PureComponent {
         const mkCustomProps = item => {
           let {
             onClickAction,
-            icon,
             className
           } = item
 
           return {
             style: pointerStyle,
-            onClick: onClickAction
+            onClick: onClickAction( {
+              history: this.props.history
+            })
           }
         }
 
@@ -166,7 +166,6 @@ class TopBar extends PureComponent {
           let {
             pointer,
             path,
-            icon,
             className,
           } = item
 
@@ -179,7 +178,6 @@ class TopBar extends PureComponent {
         const mkRouteProps = item => {
           let {
             pointer,
-            icon,
             className,
           } = item
 
@@ -209,7 +207,11 @@ class TopBar extends PureComponent {
 
         return (
           item.showIf() ?
-            <li key={i} className={ item.isActive?'isActive':'' }> <a {...mkProps(spec)}>{ item.title }</a> </li>
+            <li key={i} className={ item.isActive?'isActive':'' }>
+              <a {...mkProps(spec)} >
+                { item.title } <i className={item.icon} aria-hidden="true"></i>
+              </a>
+            </li>
             :''
         )
     }
