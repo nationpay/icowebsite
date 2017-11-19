@@ -72,7 +72,7 @@ class Register extends PureComponent {
         this.alertOptions = {
           offset: 20,
           position: 'top right',
-          theme: 'dark',
+          theme: 'light',
           time: 5000,
           transition: 'fade'
         }

@@ -18,8 +18,8 @@ const api = null
 const getApi = token => mkApi({
   getToken: Ru.K(token),
   apiRoute: 'api',
-  // rootUrl: 'https://ico.nationpay.co',
-  rootUrl: 'http://localhost:3050',
+  rootUrl: 'https://ico.nationpay.co',
+  // rootUrl: 'http://localhost:3051',
   versionUrl: Ru.K(''),
   logger: true,
   // xfInput: snakeCaseKeysIfObj
