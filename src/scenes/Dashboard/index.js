@@ -47,7 +47,14 @@ class Dashboard extends PureComponent {
                                 </Col>
                                 <Col className="price" md={ 12 }>
                                     <p className="text"> NPT TOKEN PRICE </p>
-                                    <p className="number"> 0.60 USD </p>
+                                    <p className="text-secondary">First 3,000,000 NPT - Private Investment Discount </p>
+                                    <p className="number">1 NPT = $0.50 </p>
+                                    <p className="text-secondary">Next 3,500,000 NPT - Early Adopter discount </p>
+                                    <p className="number">1 NPT = $0.75  </p>
+                                    <p className="text-secondary">Next 3,500,000 NPT - Final discount </p>
+                                    <p className="number">1 NPT = $1.00  </p>
+                                    <p className="text-secondary">Final 30,000,000 NPT - Nominal Price </p>
+                                    <p className="number"> 1 NPT = $1.50 </p>
                                 </Col>
                             </Row>
                         </Col>
