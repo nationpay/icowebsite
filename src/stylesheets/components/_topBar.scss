@@ -131,6 +131,17 @@
 
 .navbar-default .navbar-nav > li > a {
 	color: #fff;
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        width: 0;
+        height: 4px;
+        background-color: $third_color;
+        pointer-events: none;
+    }
 }
 
 
@@ -145,14 +156,8 @@
 	color: #fff;
 
     &:after {
-        content: "";
-        position: absolute;
-        bottom: 20px;
-        left: 15px;
+        transition: width .15s ease-out;
         width: calc(100% - 30px);
-        height: 4px;
-        background-color: $third_color;
-        pointer-events: none;
     }
 
 }

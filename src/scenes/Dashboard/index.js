@@ -6,6 +6,7 @@ import React, { PureComponent } from 'react'
 
 import { connect } from 'react-redux'
 
+import { Grid, Row , Col } from 'react-bootstrap';
 
 const mapStateToProps = ( state, ownProps ) => {
 
@@ -25,20 +26,33 @@ class Dashboard extends PureComponent {
     render(){
         return(
             <section id="dashboard" className="dashboard-section section" >
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <h2 className="section-heading wow fadeIn" data-wow-duration="1s">
-                                Welcome { this.props.profile.firstName } to Nation Pay!
+                <Grid>
+                    <Row>
+                        <Col md={ 5 } mdOffset={ 1 }>
+                            <h2 className="section-heading">
+                                Hi Alex Oviedo{ this.props.profile.firstName }
                             </h2>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-md-10 col-md-offset-1">
-                             <p> Will contact you very soon once the ICO is ready </p>
-                        </div>
-                    </div>
-                </div>
+                            <p className="buy-tokens">BUY TOKENS</p>
+                            <div className="box-tokens">
+                                <p>Address will be available at the start pf the ICO, on Novenmber 2nd at 2PM UTC.</p>
+                                <p>ICO STARTS IN</p>
+                                <div id ="getting-started" className="getting-started"> </div>
+                            </div>
+                        </Col>
+                        <Col md={ 5 }>
+                            <Row>
+                                <Col className="balance" md={ 12 }>
+                                    <p className="text"> YOUR BALANCE </p>
+                                    <p className="number"> 0 NPT </p>
+                                </Col>
+                                <Col className="price" md={ 12 }>
+                                    <p className="text"> NPT TOKEN PRICE </p>
+                                    <p className="number"> 0.60 USD </p>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Grid>
             </section>
         )
     }

@@ -2,5 +2,98 @@
 	background-color: #f5f5f5;
 	margin-top: 80px;
 
+	.section-heading {
+		font-weight: 600;
+	}
 
+	.buy-tokens {
+		color: $primary_color;
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.box-tokens {
+		margin-top: 20px;
+		padding: 20px;
+		background: #ebeeff;
+		//border: 1px solid #ededed;
+
+
+		.getting-started {
+			text-align: center;
+
+			.timer {
+	            display: inline-block;
+	            position: relative;
+	            margin: 0px 20px;
+
+	            .value {
+	                line-height: 50px;
+	                font-size: 50px;
+	                color: #373737;
+	            }
+
+	            .title {
+	                text-transform: lowercase;
+	                font-size: 15px;
+	                color: #696f6f;
+	            }
+	        }
+
+	        @media (max-width: $screen-sm-max) {
+	            .timer {
+
+	                .value {
+	                    line-height: 30px;
+	                    font-size: 30px;
+	                }
+
+	                .title {
+	                    font-size: 10px;
+	                }
+	            }
+	        }
+
+	        @media (max-width: $screen-xs-max) {
+	            .timer {
+	                margin: 10px;
+	                .value {
+	                    line-height: 40px;
+	                    font-size: 40px;
+	                }
+
+	                .title {
+	                    font-size: 16px;
+	                }
+	            }
+	        }
+	    }
+	}
+
+	.balance {
+		padding: 0 40px;
+
+		.text {
+			font-size: 18px;
+			font-weight: 600;
+		}
+
+		.number {
+			color: $primary_color;
+			font-size: 24px;
+			font-weight: 600;
+		}
+	}
+
+	.price {
+		margin-top: 20px;
+		@extend .balance;
+	}
+
+	@media (max-width: $screen-xs-max) {
+		.balance {
+			padding: 0 15px;
+			margin-top: 20px;
+		}
+	}
 }
