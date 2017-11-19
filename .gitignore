@@ -4,3 +4,5 @@ node_modules
 .sass-cache/*
 dist/bower_components
 dist/assets/js/bundle/*
+
+ bower_components
