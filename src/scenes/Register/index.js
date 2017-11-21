@@ -18,7 +18,7 @@ import { store } from '../../store.js'
 
 import { auth, crypto, validator } from '../../services'
 
-import Alert from 'react-alert'
+import Alert from 'react-s-alert';
 
 const styles = {
   underlineStyle: {
@@ -70,11 +70,11 @@ class Register extends PureComponent {
         }
 
         this.alertOptions = {
-          offset: 20,
-          position: 'top right',
-          theme: 'light',
-          time: 5000,
-          transition: 'fade'
+          offset: 50,
+          position: 'top-right',
+          effect: 'slide',
+          html: false,
+          timeout: 5000,
         }
     }
 
@@ -165,16 +165,13 @@ class Register extends PureComponent {
     }
 
     showAlert(){
-      if ( this.state.submitted ) {
-        this.msg.show(this.state.alertError.description, {
-          time: 10000,
-          type: 'error',
-          //  icon: <img src="path/to/some/img/32x32.png" />
-        })
-
-        this.setState({ submitted: false })
-
-      }
+        if ( this.state.submitted ) {
+           Alert.error(
+               this.state.alertError.description,
+               this.alertOptions
+           );
+           this.setState({ submitted: false })
+         }
      }
 
     handleChange(event) {
@@ -197,7 +194,7 @@ class Register extends PureComponent {
                     <div className='container'>
                         <div className='row text-center'>
                             <div className='col-md-6 col-md-offset-3'>
-                                <Alert ref={a => this.msg = a} {...this.alertOptions} />
+                                <Alert stack={{limit: 3}} />
                                 <form name="form" className="form" onSubmit={this.handleSubmit}>
                                     <h2 className="section-heading">Sign Up</h2>
                                     <div className={'form-group' + (submitted && ( !user.firstName || validationError.firstName ) ? ' has-error' : '')}>
