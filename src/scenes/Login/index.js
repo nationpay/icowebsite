@@ -78,8 +78,8 @@ class Login extends PureComponent {
     componentDidMount(){
       let search = new URLSearchParams (this.props.location.search)
 
-      let name = 'd'
-      let email = 'd'
+      let name = search.get('name')
+      let email = search.get('email')
 
       if ( Ru.isNotNil(name) && Ru.isNotNil(email) ) {
         // this.state({
