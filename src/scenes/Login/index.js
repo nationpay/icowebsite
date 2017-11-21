@@ -24,7 +24,7 @@ import B from 'bluebird'
 
 import { store } from '../../store.js'
 
-import Alert from 'react-alert'
+import Alert from 'react-s-alert';
 
 import 'url-search-params-polyfill'
 
@@ -67,11 +67,10 @@ class Login extends PureComponent {
         }
 
         this.alertOptions = {
-          offset: 20,
-          position: 'top center',
-          theme: 'light',
-          time: 5000,
-          transition: 'fade'
+            offset: 50,
+            position: 'top-right',
+            effect: 'slide',
+            timeout: 5000,
         }
     }
 
@@ -79,8 +78,8 @@ class Login extends PureComponent {
     componentDidMount(){
       let search = new URLSearchParams (this.props.location.search)
 
-      let name = search.get('name')
-      let email = search.get('email')
+      let name = 'd'
+      let email = 'd'
 
       if ( Ru.isNotNil(name) && Ru.isNotNil(email) ) {
         // this.state({
@@ -91,15 +90,16 @@ class Login extends PureComponent {
         //   }
         // })
 
-        this.msg.show(
-          `Thank you ${name} for registering. \nPlease, login now to buy tokens and view your dashboard`,
-          {
-            time: 10000,
-            type: 'success',
-            //  icon: <img src="path/to/some/img/32x32.png" />
-          }
-        )
-
+        Alert.success(
+            `Thank you <b>${name}</b> for registering. \nPlease, login now to buy tokens and view your dashboard`,
+            {
+                offset: 80,
+                timeout: 7000,
+                position: 'top',
+                effect: 'flip',
+                html: true
+            }
+        );
       }
     }
 
@@ -141,13 +141,11 @@ class Login extends PureComponent {
     }
 
     showAlert(){
-       this.msg.show(this.state.error.description, {
-         time: 10000,
-         type: 'error',
-        //  icon: <img src="path/to/some/img/32x32.png" />
-       })
+        Alert.error(
+            this.state.error.description,
+            this.alertOptions
+        );
      }
-
 
     handleChange(e) {
         let { name, value } = e.target;
@@ -162,7 +160,7 @@ class Login extends PureComponent {
                     <div className='container'>
                         <div className='row text-center'>
                             <div className='col-md-6 col-md-offset-3'>
-                                <Alert ref={a => this.msg = a} {...this.alertOptions} />
+                                <Alert stack={{limit: 3}}/>
                                 <form name="form" className="form" onSubmit={this.handleSubmit}>
                                     <h2 className="section-heading">Log In</h2>
                                     <div className={'form-group' + (submitted && !email ? ' has-error' : '')}>
