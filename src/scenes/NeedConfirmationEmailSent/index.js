@@ -4,7 +4,7 @@ import Ru from 'rutils'
 
 import React, { PureComponent } from 'react'
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import B from 'bluebird'
 
@@ -20,17 +20,24 @@ class NeedConfirmationEmailSent extends PureComponent {
     render(){
         return(
             <section id="confirmation" className="confirmation-section section" >
-                <div className="container text-center">
+                <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-6 col-md-offset-3">
+                            <div className="number">
+                                <i className="fa fa-check" aria-hidden="true"></i>
+                            </div>
                             <h2 className="section-heading wow fadeIn" data-wow-duration="1s">
-                                Confirmation email successfully sent...
+                                Almost there!
                             </h2>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-10 col-md-offset-1">
-                             <p> A confirmation email has been sent to your email. Please go your email for verifying your account.  </p>
+                        <div className="col-md-6 col-md-offset-3">
+                             <p>You still need to confirm your account.<br/>
+                             If there is not account associated with this email, you will receive instructions in your inbox. </p>
+                             <div className="btn-contain">
+                                 <Link to="/login" className="btn btn-login">Log In</Link>
+                             </div>
                         </div>
                     </div>
                 </div>
