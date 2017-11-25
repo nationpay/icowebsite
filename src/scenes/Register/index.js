@@ -156,7 +156,7 @@ class Register extends PureComponent {
           console.log( 'store at registering ', store.getState() )
           console.log( ' registering status ', auth.isNewRegistry() )
 
-          history.push('/needConfirmationEmailSent')
+          history.push(`/needConfirmationEmailSent?email=${user.email}`)
         }))
         .catch(err => {
           console.log( 'Err-register', err );

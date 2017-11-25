@@ -63,6 +63,16 @@ const register = data => {
   )
 }
 
+const resendConfirmationLink = email => {
+  const api = getApi()
+
+  return (
+    api
+    .put(`signup/resend/${email}`, {})
+    .then( rejectIfError(Ru.K(true)) )
+  )
+}
+
 
 const logOut = token => {
   const api =  getApi(token)
@@ -75,6 +85,7 @@ const logOut = token => {
 const auth = {
   login,
   register,
+  resendConfirmationLink,
   logout: spec => B.resolve('Logged out'),
   isLoggedIn: () =>  store.getState().user.isLoggedIn,
   isNewRegistry: () => newRegistry,
