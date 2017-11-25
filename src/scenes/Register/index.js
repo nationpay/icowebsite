@@ -12,6 +12,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { TextField, SelectField, MenuItem, Checkbox } from 'material-ui';
 
+import LaddaButton, { S, ZOOM_IN } from 'react-ladda';
+
 import B from 'bluebird'
 
 import { store } from '../../store.js'
@@ -59,6 +61,7 @@ class Register extends PureComponent {
                 password: '',
                 retypedPassword: '',
             },
+            loading: false,
             submitted: false,
             validationError:{
               firstName: false,
@@ -118,7 +121,7 @@ class Register extends PureComponent {
           const err = {
             description: "the password fields should be the same"
           }
-          this.setState({ alertError: err }, this.showAlert )
+          this.setState({ alertError: err, loading: false }, this.showAlert )
         }
 
       })
@@ -129,7 +132,7 @@ class Register extends PureComponent {
     handleSubmit(event) {
         event.preventDefault()
 
-        this.setState({ submitted: true })
+        this.setState({ submitted: true, loading: true })
 
         let fields = [
           'firstName',
@@ -160,7 +163,7 @@ class Register extends PureComponent {
         }))
         .catch(err => {
           console.log( 'Err-register', err );
-          this.setState({ alertError: err }, this.showAlert )
+          this.setState({ alertError: err, loading: false }, this.showAlert )
         })
     }
 
@@ -170,7 +173,7 @@ class Register extends PureComponent {
                this.state.alertError.description,
                this.alertOptions
            );
-           this.setState({ submitted: false })
+           this.setState({ submitted: false, loading: false })
          }
      }
 
@@ -185,9 +188,20 @@ class Register extends PureComponent {
         }, this.validateData)
     }
 
+    handleButton(validationError) {
+        let checkFields = prop => {
+            if(prop === true) {
+                this.setState({
+                    loading: false }
+                );
+            }
+         };
+
+        let checking = Ru.map(checkFields, validationError);
+    }
 
     render(){
-        const { user, submitted, validationError } = this.state
+        const { user, submitted, validationError, loading } = this.state
         return(
             <MuiThemeProvider>
                 <section className="login-section section">
@@ -285,7 +299,18 @@ class Register extends PureComponent {
                                           }
                                     </div>
                                     <div className="btn-contain">
-                                          <button className="btn btn-login">Sign Up</button>
+                                        <LaddaButton
+                                            className="btn btn-login"
+                                            loading={loading}
+                                            data-color="#eee"
+                                            onClick= { this.handleButton(validationError) }
+                                            data-size={S}
+                                            data-style={ZOOM_IN}
+                                            data-spinner-size={30}
+                                            data-spinner-color="#ddd"
+                                            data-spinner-lines={12}
+                                        >Sign up
+                                        </LaddaButton>
                                           <Link to="/" className="btn btn-link">Log In</Link>
                                     </div>
                                 </form>
