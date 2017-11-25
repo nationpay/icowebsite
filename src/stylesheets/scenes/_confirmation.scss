@@ -60,15 +60,19 @@
 
 	.btn-login {
 		margin-top: 30px;
-		font-weight: 600;
-		color: #fff;
 		background: linear-gradient(180deg, $secondary_color, $primary_color);
 		width: 50%;
-		font-size: 20px;
 		height: 50px;
 
-		&:hover {
-			background: $primary_color;
+		span {
+			font-weight: 700;
+			color: #fff;
+			font-size: 20px!important;
 		}
+
+
+		// &:hover {
+		// 	background: $primary_color;
+		// }
 	}
 }

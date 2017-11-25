@@ -12,6 +12,8 @@ import B from 'bluebird'
 
 import { auth } from '../../services'
 
+import LaddaButton, { S, ZOOM_IN } from 'react-ladda';
+
 import 'url-search-params-polyfill'
 
 import Alert from 'react-s-alert';
@@ -23,11 +25,16 @@ class NeedConfirmationEmailSent extends PureComponent {
 
     constructor(props) {
         super(props);
+        this.state = {
+          loading: false,
+        }
     }
 
     onResend(){
       let search = new URLSearchParams (this.props.location.search)
-
+      this.setState({
+          loading: true
+      });
       let email = search.get('email')
 
       console.log('Resend to this email', email);
@@ -45,17 +52,25 @@ class NeedConfirmationEmailSent extends PureComponent {
                 effect: 'flip'
             }
         )
+
+        this.setState({
+            loading: false
+        });
       })
       .catch( err => {
         Alert.error(
             err.description,
             {
-                offset: 80,
-                timeout: 7000,
-                position: 'top',
-                effect: 'flip'
+                offset: 50,
+                position: 'top-right',
+                effect: 'slide',
+                html: false,
+                timeout: 5000,
             }
         )
+        this.setState({
+            loading: false
+        });
 
       })
 
@@ -66,6 +81,9 @@ class NeedConfirmationEmailSent extends PureComponent {
             <section id="confirmation" className="confirmation-section section" >
                 <div className="container">
                     <div className="row">
+                        <div className="col-md-12 text-center">
+                            <Alert stack={{limit: 3}}/>
+                        </div>
                         <div className="col-md-6 col-md-offset-3">
                             <div className="number">
                                 <i className="fa fa-check" aria-hidden="true"></i>
@@ -81,7 +99,18 @@ class NeedConfirmationEmailSent extends PureComponent {
                              If there is not account associated with this email, you will receive instructions in your inbox. </p>
                              <p> If you can't find the email, click here to resend: </p>
                              <div className="btn-contain">
-                                 <button onClick={ this.onResend } className="btn btn-login">Resend verification email</button>
+                                 <LaddaButton
+                                     className="btn btn-login"
+                                     loading={ this.state.loading }
+                                     data-color="#eee"
+                                     data-size={ S }
+                                     onClick= { this.onResend }
+                                     data-style={ ZOOM_IN }
+                                     data-spinner-size={ 30 }
+                                     data-spinner-color="#ddd"
+                                     data-spinner-lines={ 12 }
+                                 >Resend verification email
+                                 </LaddaButton>
                              </div>
                         </div>
                     </div>
