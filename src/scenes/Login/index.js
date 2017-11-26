@@ -137,7 +137,11 @@ class Login extends PureComponent {
         }))
         .catch(err => {
           console.log( 'Err-Login', err );
-          this.setState({ error: err, loading: false }, this.showAlert )
+          this.setState({
+            error: err,
+            loading: false,
+            password: '', 
+          }, this.showAlert )
         })
 
 

@@ -100,14 +100,15 @@ class App extends PureComponent {
 
       this.linksSpec = [
         {
-          type: 'url',
+          type: 'route',
           item: {
-            pointer: 'https://ico.nationpay.io',
+            pointer: '/',
             title: 'HOME',
-            sameTab: true,
             icon: null,
-            showIf: Ru.K(true),
-            className: null
+            // showIf: Ru.complement( auth.isLoggedIn ),
+            showIf: Ru.K( true ),
+            className: null,
+            isActive: true
           }
         },
         {

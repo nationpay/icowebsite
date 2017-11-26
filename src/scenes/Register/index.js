@@ -163,7 +163,15 @@ class Register extends PureComponent {
         }))
         .catch(err => {
           console.log( 'Err-register', err );
-          this.setState({ alertError: err, loading: false }, this.showAlert )
+          this.setState({
+            alertError: err,
+            loading: false,
+            user: {
+              ...this.state.user,
+              password: '',
+              retypedPassword: ''
+            }
+          }, this.showAlert )
         })
     }
 
