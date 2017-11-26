@@ -192,8 +192,8 @@ class Register extends PureComponent {
         let checkFields = prop => {
             if(prop === true) {
                 this.setState({
-                    loading: false }
-                );
+                    loading: false
+                });
             }
          };
 
@@ -207,8 +207,8 @@ class Register extends PureComponent {
                 <section className="login-section section">
                     <div className='container'>
                         <div className='row text-center'>
+                            <Alert stack={{limit: 3}} />
                             <div className='col-md-6 col-md-offset-3'>
-                                <Alert stack={{limit: 3}} />
                                 <form name="form" className="form" onSubmit={this.handleSubmit}>
                                     <h2 className="section-heading">Sign Up</h2>
                                     <div className={'form-group' + (submitted && ( !user.firstName || validationError.firstName ) ? ' has-error' : '')}>
