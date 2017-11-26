@@ -102,7 +102,7 @@ class App extends PureComponent {
         {
           type: 'url',
           item: {
-            pointer: 'https://nationpay.io',
+            pointer: 'https://ico.nationpay.io',
             title: 'HOME',
             sameTab: true,
             icon: null,
