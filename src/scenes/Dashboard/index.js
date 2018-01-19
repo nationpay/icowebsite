@@ -32,6 +32,7 @@ class Dashboard extends PureComponent {
                             <h2 className="section-heading">
                                 Hi { this.props.profile.firstName }
                             </h2>
+                            <p>Whitelist your ether address now.  Fill out the <a href="https://docs.google.com/forms/d/1e4t4LgHe5-cjSNLUmRHf6kKY7nsy8NiBEztjtkmWC68/" target="_blank">whitelist form</a></p>
                             <p className="buy-tokens">BUY TOKENS</p>
                             <div className="box-tokens">
                                 <p>Address will be available at the start of the pre-ICO, on March 1st at 10AM UTC.</p>
